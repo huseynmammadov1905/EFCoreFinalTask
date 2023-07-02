@@ -1,0 +1,12 @@
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\bin\Debug\net6.0\SchoolBus.Models.deps.json
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\bin\Debug\net6.0\SchoolBus.Models.dll
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\bin\Debug\net6.0\SchoolBus.Models.pdb
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\SchoolBus.Models.csproj.AssemblyReference.cache
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\SchoolBus.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\SchoolBus.Models.AssemblyInfoInputs.cache
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\SchoolBus.Models.AssemblyInfo.cs
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\SchoolBus.Models.csproj.CoreCompileInputs.cache
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\SchoolBus.Models.dll
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\refint\SchoolBus.Models.dll
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\SchoolBus.Models.pdb
+C:\Users\memme\source\repos\EFCoreSchoolBus\SchoolBus.Models\obj\Debug\net6.0\ref\SchoolBus.Models.dll

@@ -1,0 +1,137 @@
+﻿<UserControl x:Class="SchoolBus.Presentation.Views.CreateRideView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchoolBus.Presentation.Views" xmlns:viewmodels="clr-namespace:SchoolBus.Presentation.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:CreateRideViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="LightYellow">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Background="LightGoldenrodYellow">
+            <Label Content="Ride" FontSize="40" FontFamily="Elephant" ></Label>
+            <Label Content="Driver FirstName" FontSize="15" FontFamily="Elephant" />
+            <TextBlock Text="{Binding SelectDriver.FirstName}" FontSize="15" FontFamily="Elephant" Foreground="Gray"/>
+
+            <Label Content="Driver LastName " FontSize="15" FontFamily="Elephant" />
+            <TextBlock Text="{Binding SelectDriver.LastName}" FontSize="15" FontFamily="Elephant" Foreground="Gray"/>
+
+            <Label Content="Ride Name " FontSize="15" FontFamily="Elephant" />
+            <TextBox Text="{Binding AddRide.NameRide,Mode=TwoWay}" FontSize="15" FontFamily="Elephant" Foreground="Gray"/>
+
+            <!--<Label Content="Car  " FontSize="15" FontFamily="Elephant" />
+            <TextBlock Text="{Binding SelectDriver.Car.Name}" FontSize="15" FontFamily="Elephant" Foreground="Gray"/>
+
+            <Label Content="Car Number " FontSize="15" FontFamily="Elephant" />
+            <TextBlock Text="{Binding SelectDriver.Car.CarNumber}" FontSize="15" FontFamily="Elephant" Foreground="Gray"/>
+
+            <Label Content="Seat Count " FontSize="15" FontFamily="Elephant" />
+            <TextBlock Text="{Binding SelectDriver.Car.SeatCount}" FontSize="15" FontFamily="Elephant" Foreground="Gray"/>
+
+            <Label Content="Student Count " FontSize="15" FontFamily="Elephant" />
+            <TextBlock Text="{Binding RideStudents.Count}" FontSize="15" FontFamily="Elephant" Foreground="Gray"/>-->
+
+            <ComboBox ItemsSource="{Binding Drivers}" SelectedItem="{Binding SelectDriver}" DisplayMemberPath="Name"></ComboBox>
+
+
+            <Button
+         
+            Content="Create Ride"
+            Margin="40"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Command="{Binding DataContext.RideCreateCommand,ElementName=LV}" Background="Orange" Foreground="Black" FontFamily="Elephant" >
+
+            </Button>
+
+
+            <!--<Button
+           
+            Content="See Rides"
+            Margin="40"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Command="{Binding DataContext.SeeRideCommand,ElementName=LV}" Background="Orange" Foreground="Black" FontFamily="Elephant"  Grid.Row="0" Height="35" VerticalAlignment="Top" Width="200"></Button>-->
+
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <ListView x:Name="LV"  ItemsSource="{Binding Students}" SelectedItem="{Binding SelectStudent}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Student Name" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="Student LastName" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="Parent" DisplayMemberBinding="{Binding ParentId}"/>
+                        <GridViewColumn Header="Adress" DisplayMemberBinding="{Binding HomeAdress}"/>
+                        <GridViewColumn Header="Class" DisplayMemberBinding="{Binding ClassId}"/>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button
+          
+            Content="+"
+            Margin="40"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Command="{Binding DataContext.AddCommand,ElementName=LV}" Background="Orange" Foreground="Black" FontFamily="Elephant" >
+
+                                    </Button>
+
+
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+
+
+                </ListView.View>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontFamily" Value="Elephant"></Setter>
+                        <Setter Property="FontSize" Value="15"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+
+
+            <ListView Grid.Row="1" x:Name="LV2"  ItemsSource="{Binding RideStudents}" SelectedItem="{Binding SelectRideStudent}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Student Name" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="Student LastName" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="Parent" DisplayMemberBinding="{Binding ParentId}"/>
+                        <GridViewColumn Header="Adress" DisplayMemberBinding="{Binding HomeAdress}"/>
+                        <GridViewColumn Header="Class" DisplayMemberBinding="{Binding ClassId}"/>
+                        <GridViewColumn>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button
+            Style="{StaticResource MaterialDesignRaisedButton}"
+           
+            Content="-"
+            Margin="40"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"  Command="{Binding DataContext.DeleteCommand,ElementName=LV2}" Background="Orange" Foreground="Black" FontFamily="Elephant" >
+
+                                    </Button>
+
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontFamily" Value="Elephant"></Setter>
+                        <Setter Property="FontSize" Value="15"></Setter>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>
+    </Grid>
+</UserControl>
